@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOCKY Forensics Console v2.0</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2D Force Graph for Evidence Visualization -->
+    <script src="https://unpkg.com/force-graph"></script>
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        body { background-color: #080b12; color: #e2e8f0; font-family: 'Inter', sans-serif; overflow: hidden; }
+        .glass-panel { background: rgba(13, 17, 28, 0.9); backdrop-filter: blur(12px); border-right: 1px solid rgba(55, 65, 81, 0.5); }
+        .neon-text { text-shadow: 0 0 12px rgba(56, 189, 248, 0.6); }
+        .tab-active { border-bottom: 2px solid #38bdf8; color: #38bdf8; }
+        
+        #view-graph {
+            background-image: linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px; background-position: center center;
+        }
+
+        .timeline-item::before {
+            content: ''; position: absolute; left: -25px; top: 5px; width: 12px; height: 12px;
+            border-radius: 50%; background-color: #f43f5e; border: 2px solid #080b12; box-shadow: 0 0 8px #f43f5e;
+        }
+        .timeline-line { border-left: 2px solid #1f2937; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .table-row-hover:hover { background-color: rgba(31, 41, 55, 0.5); }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+    </style>
+</head>
+<body class="flex h-screen">
+
+    <!-- REPLAY MODAL (Hidden by default) -->
+    <div id="replay-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="bg-[#0d111c] border border-fuchsia-500/50 rounded-xl p-8 max-w-lg w-full shadow-[0_0_40px_rgba(192,38,211,0.2)]">
+            <h2 class="text-2xl font-bold text-gray-100 mb-2 flex items-center gap-3">
+                <svg class="w-7 h-7 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Reproducible Forensics
+            </h2>
+            <p class="text-gray-400 text-sm mb-6 pb-4 border-b border-gray-800">Replaying morphing detection logic against immutable cryptographic evidence.</p>
+            
+            <div class="space-y-4 font-mono text-sm mb-8">
+                <div class="flex justify-between"><span class="text-gray-500">TARGET:</span> <span class="text-sky-400 font-bold">INV-2026-00001</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">SOURCE:</span> <span class="text-gray-300">Immutable Evidence Snapshot</span></div>
+                
+                <div class="pt-4 mt-4 border-t border-gray-800 flex justify-between">
+                    <span class="text-gray-500">ARCHIVED EVIDENCE SCANNED:</span> 
+                    <span id="replay-archived-count" class="text-emerald-400 font-bold">0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">EVIDENCE INTEGRITY:</span> 
+                    <span class="text-emerald-400 font-bold">✓ VERIFIED (AES-256-GCM / SHA-256)</span>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-700 p-4 rounded-lg mt-4 grid grid-cols-3 items-center">
+                    <div class="text-center border-r border-gray-700">
+                        <div class="text-xs text-gray-500 mb-1">OLD FINDINGS</div>
+                        <div id="replay-old-findings" class="text-xl font-bold text-gray-300">0</div>
+                    </div>
+                    <div class="text-center border-r border-gray-700">
+                        <div class="text-xs text-fuchsia-400 mb-1">NEW FINDINGS</div>
+                        <div id="replay-new-findings" class="text-xl font-bold text-fuchsia-500">0</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-rose-400 mb-1">NEW RISK</div>
+                        <div id="replay-new-risk" class="text-xl font-bold text-rose-500">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="window.location.reload()" class="w-full bg-fuchsia-600 hover:bg-fuchsia-500 text-white py-3 rounded text-sm font-bold shadow-[0_0_15px_rgba(192,38,211,0.4)] transition-colors">
+                Apply & Update Forensic Graph
+            </button>
+        </div>
+    </div>
+
+    <!-- LEFT SIDEBAR: REPORT DATA -->
+    <div id="report-content" class="w-1/3 min-w-[400px] max-w-[450px] h-full glass-panel flex flex-col z-10 overflow-y-auto">
+        <div class="p-6 border-b border-gray-800 flex justify-between items-center bg-[#0d111c] sticky top-0 z-20">
+            <div>
+                <h1 class="text-2xl font-bold text-sky-400 neon-text flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    JOCKY Forensics
+                </h1>
+                <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest font-mono">INV-2026-00001 (C2 SERVER)</p>
+            </div>
+            <button onclick="generatePDF()" id="pdf-btn" class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded text-sm font-semibold transition-all shadow-[0_0_15px_rgba(2,132,199,0.4)] flex items-center gap-2">
+                Export
+            </button>
+        </div>
+
+        <div class="p-6 flex-1">
+            
+            <!-- LIFECYCLE PANEL -->
+            <div class="bg-gray-900/60 rounded-xl p-5 border border-gray-800 mb-6 relative overflow-hidden shadow-inner">
+                <div class="flex justify-between items-center mb-3 border-b border-gray-800 pb-2">
+                    <span class="text-gray-400 font-bold uppercase tracking-wider text-xs">Lifecycle Status:</span>
+                    <div class="flex items-center gap-2">
+                        <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span></span>
+                        <span id="lifecycle-status" class="text-emerald-400 font-bold text-sm">LISTENING</span>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-gray-300 font-mono text-xs">
+                    <li><span class="text-emerald-500 mr-2">✓</span> Polymorphic Agent Compiled</li>
+                    <li><span class="text-emerald-500 mr-2">✓</span> <span id="lifecycle-hosts" class="font-bold text-white">0</span> target hosts connected</li>
+                    <li><span class="text-emerald-500 mr-2">✓</span> <span id="lifecycle-artifacts" class="font-bold text-white">0</span> forensic artifacts collected</li>
+                    <li><span class="text-emerald-500 mr-2">✓</span> Cryptographic Integrity <span id="lifecycle-integrity" class="font-bold text-emerald-400">VERIFIED</span></li>
+                    <li><span id="lifecycle-findings-icon" class="text-emerald-500 mr-2">✓</span> <span id="lifecycle-findings" class="font-bold text-emerald-400">0</span> correlation findings</li>
+                </ul>
+            </div>
+
+            <!-- EXPLAINABLE ALERTS -->
+            <div class="flex justify-between items-end border-b border-gray-800 pb-2 mb-4">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Rule Triggers (Why?)</h2>
+                <span id="risk-score-badge" class="text-xs font-bold px-2 py-0.5 rounded bg-gray-800 text-gray-400 border border-gray-700 transition-all">RISK: 0</span>
+            </div>
+            
+            <div id="alerts-list" class="space-y-3 mb-8">
+                <p class="text-sm text-gray-600 italic">Awaiting agent telemetry...</p>
+            </div>
+
+            <!-- NODE INSPECTOR -->
+            <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest border-b border-gray-800 pb-2 mb-4">Provenance Inspector</h2>
+            <div id="node-inspector" class="bg-gray-900/60 rounded-xl p-5 text-sm text-gray-400 border border-gray-800 shadow-inner min-h-[150px] flex items-center justify-center text-center transition-all">
+                <div>
+                    <svg class="w-8 h-8 mx-auto text-gray-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l5-5m0 0l-5-5m5 5H4"></path></svg>
+                    Click any node in the graph to verify cryptographic chain of custody.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT MAIN AREA: TABS -->
+    <div class="flex-1 flex flex-col relative w-full h-full">
+        <div class="h-14 bg-[#0d111c]/90 backdrop-blur-md border-b border-gray-800 flex items-center px-6 gap-6 z-20 absolute top-0 w-full shadow-md">
+            <button id="tab-orchestration" onclick="switchTab('orchestration')" class="h-full px-2 text-sm font-semibold tab-active transition-colors">Endpoint Orchestration</button>
+            <button id="tab-graph" onclick="switchTab('graph')" class="h-full px-2 text-sm font-semibold text-gray-500 hover:text-gray-300 transition-colors">Evidence Graph</button>
+            <button id="tab-timeline" onclick="switchTab('timeline')" class="h-full px-2 text-sm font-semibold text-gray-500 hover:text-gray-300 transition-colors">Chronological Timeline</button>
+        </div>
+
+        <!-- ORCHESTRATION -->
+        <div id="view-orchestration" class="w-full h-full absolute inset-0 pt-24 px-16 bg-[#080b12] overflow-y-auto">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-100 mb-2">Endpoint Orchestration (SOAR Console)</h2>
+                    <p class="text-gray-500">Live Investigation Control: <span class="font-mono text-sky-400">INV-2026-00001</span></p>
+                </div>
+                <div class="flex gap-4">
+                    <button onclick="replayInvestigation()" id="btn-replay" class="bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-4 py-2 rounded text-sm font-bold transition-all shadow-[0_0_10px_rgba(192,38,211,0.4)] flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        Replay Forensic Rules
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-[#0d111c] border border-gray-800 rounded-xl overflow-hidden shadow-xl">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-900/80 text-xs text-gray-500 uppercase tracking-wider border-b border-gray-800">
+                            <th class="p-4 font-bold">Target Host</th>
+                            <th class="p-4 font-bold">Connection Status</th>
+                            <th class="p-4 font-bold">Local Risk Score</th>
+                            <th class="p-4 font-bold">Active SOAR Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orchestration-table" class="text-sm">
+                        <tr><td colspan="4" class="p-6 text-center text-gray-500 italic">Waiting for agent telemetry to initialize...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- GRAPH -->
+        <div id="view-graph" class="w-full h-full absolute inset-0 pt-14 flex items-center justify-center hidden">
+            <div id="graph-container" class="w-full h-full cursor-crosshair"></div>
+            <div id="custom-tooltip" class="hidden absolute z-50 bg-[#0d111c]/95 border border-gray-700 rounded-lg p-3 text-gray-200 shadow-2xl backdrop-blur-md pointer-events-none transition-opacity duration-150"></div>
+            
+            <div class="absolute bottom-8 right-8 bg-[#0d111c]/90 backdrop-blur-md border border-gray-800 p-4 rounded-xl text-xs space-y-3 shadow-xl">
+                <div class="font-bold text-gray-400 uppercase tracking-wider mb-1 border-b border-gray-700 pb-1">Graph Legend</div>
+                <div class="flex items-center gap-3"><span class="w-3.5 h-3.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span> Endpoint Host</div>
+                <div class="flex items-center gap-3"><span class="w-3.5 h-3.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]"></span> Detected Threat</div>
+                <div class="flex items-center gap-3"><span class="w-3.5 h-3.5 rounded-full bg-sky-600"></span> Standard Process</div>
+                <div class="flex items-center gap-3"><span class="w-3.5 h-3.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.6)]"></span> Network Socket</div>
+            </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div id="view-timeline" class="w-full h-full absolute inset-0 pt-24 px-16 bg-[#080b12] hidden overflow-y-auto">
+            <h2 class="text-3xl font-bold text-gray-100 mb-2">Chronological Event Reconstruction</h2>
+            <p class="text-gray-500 mb-10">Time-series mapping of collected artifacts and triggered alerts.</p>
+            <div id="timeline-container" class="timeline-line ml-4 pl-10 pb-12 relative space-y-8">
+                <p class="text-gray-500 italic">No incidents recorded in the timeline yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- UI NAVIGATION ---
+        function switchTab(tab) {
+            ['orchestration', 'graph', 'timeline'].forEach(t => {
+                const view = document.getElementById(`view-${t}`);
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    view.classList.remove('hidden'); 
+                    btn.classList.add('tab-active'); 
+                    btn.classList.remove('text-gray-500');
+                } else {
+                    view.classList.add('hidden'); 
+                    btn.classList.remove('tab-active'); 
+                    btn.classList.add('text-gray-500');
+                }
+            });
+            if (tab === 'timeline') loadTimeline();
+        }
+
+        // --- GRAPH HELPERS ---
+        function getNodeColor(group) {
+            if (group === 'host') return '#f59e0b';
+            if (group.includes('threat')) return '#f43f5e';
+            if (group === 'network_socket') return '#a855f7';
+            return '#0284c7';
+        }
+
+        let Graph;
+        let currentDataHash = "";
+
+        // --- CORE DATA POLLING (LIVE UPDATES) ---
+        function pollData() {
+            // Update Summary
+            fetch('/api/investigation/summary/INV-2026-00001')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.status) document.getElementById('lifecycle-status').innerText = data.status;
+                    document.getElementById('lifecycle-hosts').innerText = data.hosts_connected;
+                    document.getElementById('lifecycle-artifacts').innerText = data.artifacts_collected.toLocaleString();
+                    document.getElementById('lifecycle-integrity').innerText = data.integrity;
+                    
+                    const findingsEl = document.getElementById('lifecycle-findings');
+                    const iconEl = document.getElementById('lifecycle-findings-icon');
+                    findingsEl.innerText = data.findings;
+                    
+                    if(data.findings > 0) {
+                        iconEl.innerText = '⚠';
+                        iconEl.className = 'text-rose-500 mr-2';
+                        findingsEl.className = 'font-bold text-rose-400';
+                    } else {
+                        iconEl.innerText = '✓';
+                        iconEl.className = 'text-emerald-500 mr-2';
+                        findingsEl.className = 'font-bold text-emerald-400';
+                    }
+                })
+                .catch(err => console.error("Summary poll failed:", err));
+
+            // Update Graph and UI Panels
+            fetch('/api/graph/data')
+                .then(r => r.json())
+                .then(data => {
+                    const newDataHash = data.nodes.length + "-" + data.links.length + "-" + data.alerts.length;
+                    
+                    // Only re-render if the payload size changed (prevents graph jitter)
+                    if (newDataHash !== currentDataHash) {
+                        currentDataHash = newDataHash;
+                        updateUI(data);
+                    }
+                })
+                .catch(err => console.error("Graph data poll failed:", err));
+        }
+
+        function updateUI(data) {
+            // 1. Update Orchestration Table
+            const hosts = data.nodes.filter(n => n.group === 'host');
+            const orchTable = document.getElementById('orchestration-table');
+            if (hosts.length > 0) {
+                orchTable.innerHTML = hosts.map(h => `
+                    <tr class="border-b border-gray-800 table-row-hover transition-colors">
+                        <td class="p-4 font-mono font-bold text-gray-200">${h.label}</td>
+                        <td class="p-4"><span class="bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full text-xs font-bold border border-emerald-500/30">ONLINE</span></td>
+                        <td class="p-4"><span class="${h.risk_score > 0 ? 'text-rose-500 font-bold' : 'text-emerald-500 font-bold'}">${h.risk_score} / 100</span></td>
+                        <td class="p-4 flex gap-3">
+                            <button onclick="switchTab('graph')" class="text-sky-400 hover:text-sky-300 text-xs font-bold uppercase tracking-wider bg-sky-500/10 px-3 py-1 rounded border border-sky-500/20">Inspect ➔</button>
+                            <button onclick="containHost('${h.label}')" class="bg-rose-500/20 text-rose-400 hover:bg-rose-500/30 px-3 py-1 rounded text-xs font-bold border border-rose-500/30 transition-colors shadow-[0_0_8px_rgba(244,63,94,0.3)]">Contain Host (SOAR)</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // 2. Update Alerts Sidebar
+            const alerts = data.alerts || [];
+            let totalScore = alerts.reduce((acc, a) => acc + a.impact, 0);
+            
+            const scoreBadge = document.getElementById('risk-score-badge');
+            scoreBadge.innerText = `RISK SCORE: ${totalScore}`;
+            if(totalScore > 0) {
+                scoreBadge.className = "text-xs font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30 shadow-[0_0_8px_rgba(244,63,94,0.4)]";
+            }
+
+            if (alerts.length > 0) {
+                document.getElementById('alerts-list').innerHTML = alerts.map(a => `
+                    <div class="bg-[#0f1423] border-l-4 border-rose-500 p-3 rounded-r-lg shadow-md hover:bg-[#13192b] transition-colors">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-rose-500 text-sm drop-shadow-md">+${a.impact}</span>
+                            <div class="flex gap-2">
+                                <span class="text-[10px] font-mono bg-sky-500/20 text-sky-400 px-2 py-0.5 rounded border border-sky-500/30">${a.evidence_id}</span>
+                                <span class="text-[10px] font-bold bg-rose-500/20 text-rose-400 px-2 py-0.5 rounded tracking-wider">${a.severity}</span>
+                            </div>
+                        </div>
+                        <div class="text-sm font-semibold text-gray-100">${a.title}</div>
+                        <div class="text-xs text-gray-400 mt-1.5 font-mono bg-gray-900/50 p-1.5 rounded"><span class="text-amber-500">${a.host}</span> ➔ ${a.process} (PID:${a.pid})</div>
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('alerts-list').innerHTML = `<p class="text-sm text-gray-600 italic">No threats detected.</p>`;
+            }
+
+            // 3. Initialize or Update Force Graph
+            const elem = document.getElementById('graph-container');
+            if (!Graph) {
+                Graph = ForceGraph()(elem)
+                    .backgroundColor('rgba(0,0,0,0)')
+                    .nodeId('id')
+                    .nodeVal(n => n.val || 5)
+                    .nodeColor(n => getNodeColor(n.group))
+                    .linkDirectionalParticles(2)
+                    .linkDirectionalParticleSpeed(0.005)
+                    .linkColor(() => 'rgba(148, 163, 184, 0.2)')
+                    .linkWidth(1.5)
+                    .onNodeHover(node => {
+                        const tooltip = document.getElementById('custom-tooltip');
+                        elem.style.cursor = node ? 'pointer' : 'crosshair';
+                        if (node) {
+                            const color = getNodeColor(node.group);
+                            let html = `<div class="border-l-4 pl-3" style="border-color: ${color}">
+                                    <div class="text-xs font-bold uppercase tracking-wider mb-1" style="color: ${color}">${node.group.replace('_', ' ')}</div>
+                                    <div class="text-sm font-bold text-white mb-1">${node.name || node.label}</div>`;
+                            if (node.pid) html += `<div class="text-xs text-gray-300 font-mono">PID: ${node.pid}</div>`;
+                            if (node.port) html += `<div class="text-xs text-gray-300 font-mono">PORT: ${node.port}</div>`;
+                            if (node.alert && node.alert !== 'None') html += `<div class="mt-2 pt-2 border-t border-gray-700 text-xs font-bold text-rose-400">${node.alert}</div>`;
+                            html += `</div>`;
+                            tooltip.innerHTML = html;
+                            tooltip.classList.remove('hidden');
+                        } else { tooltip.classList.add('hidden'); }
+                    })
+                    .onNodeClick(node => {
+                        Graph.centerAt(node.x, node.y, 1000); Graph.zoom(4, 1500);
+                        const inspector = document.getElementById('node-inspector');
+                        if (node.group === 'host') {
+                            inspector.innerHTML = `<div class="text-emerald-500 font-bold p-4">Host Node Selected: ${node.label}<br><span class="text-xs text-gray-500 font-normal">Risk Score: ${node.risk_score}</span></div>`;
+                            return;
+                        }
+                        
+                        inspector.innerHTML = `
+                            <div class="w-full text-left font-mono text-xs">
+                                <div class="bg-gray-800/80 p-2 rounded mb-3 border border-gray-700 flex justify-between items-center shadow-lg">
+                                    <span class="text-sky-400 font-bold">${node.evidence_id || 'EV-UNKNOWN'}</span>
+                                    <span class="text-emerald-400 font-bold flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> VERIFIED</span>
+                                </div>
+                                <div class="space-y-2 text-gray-400">
+                                    <div><span class="text-gray-500 w-20 inline-block">HOST:</span> <span class="text-amber-400">${node.host_name || 'N/A'}</span></div>
+                                    <div><span class="text-gray-500 w-20 inline-block">ARTIFACT:</span> <span class="text-gray-200">${node.artifact_type || 'N/A'}</span></div>
+                                    <div><span class="text-gray-500 w-20 inline-block">TIME:</span> <span class="text-gray-200">${node.timestamp || 'N/A'}</span></div>
+                                    ${node.name ? `<div><span class="text-gray-500 w-20 inline-block">TARGET:</span> <span class="text-gray-200">${node.name} (PID:${node.pid})</span></div>` : ''}
+                                    ${node.port ? `<div><span class="text-gray-500 w-20 inline-block">TARGET:</span> <span class="text-gray-200">Port ${node.port}</span></div>` : ''}
+                                    
+                                    <div class="mt-3 pt-3 border-t border-gray-800">
+                                        <span class="text-gray-500 block mb-1">EVIDENCE CHAIN BLOCK (SHA-256):</span>
+                                        <div class="break-all text-sky-300 bg-sky-900/20 border border-sky-900/50 p-1.5 rounded tracking-tighter">${node.current_hash || 'N/A'}</div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <span class="text-gray-500 block mb-1">PREVIOUS BLOCK:</span>
+                                        <div class="break-all text-gray-500 bg-gray-900 border border-gray-800 p-1.5 rounded tracking-tighter">${node.previous_hash || 'N/A'}</div>
+                                    </div>
+                                    
+                                    ${node.alert && node.alert !== 'None' ? `<div class="mt-4 p-2 bg-rose-500/10 border border-rose-500/30 rounded-lg"><span class="text-rose-500 font-bold uppercase block mb-1">Triggered Detection Rule:</span><span class="text-rose-400 font-semibold">${node.alert}</span></div>` : ''}
+                                </div>
+                            </div>`;
+                    });
+                Graph.d3Force('charge').strength(-250); 
+                Graph.d3Force('link').distance(60);
+                
+                // Handle Window Resize
+                window.addEventListener('resize', () => { 
+                    if(!document.getElementById('view-graph').classList.contains('hidden')){ 
+                        Graph.width(document.getElementById('view-graph').clientWidth); 
+                        Graph.height(document.getElementById('view-graph').clientHeight); 
+                    }
+                });
+            }
+            
+            // Update Data
+            Graph.graphData({ nodes: data.nodes, links: data.links });
+        }
+
+        // Handle Custom Tooltip following mouse
+        window.addEventListener('mousemove', (e) => {
+            const tooltip = document.getElementById('custom-tooltip');
+            if (tooltip && !tooltip.classList.contains('hidden')) { 
+                tooltip.style.left = (e.pageX + 15) + 'px'; 
+                tooltip.style.top = (e.pageY + 15) + 'px'; 
+            }
+        });
+
+        // --- SOAR ACTIVE RESPONSE LOGIC ---
+        function containHost(hostname) {
+            if (confirm(`[SOAR ACTION] Are you sure you want to isolate host '${hostname}' and neutralize active threats?`)) {
+                fetch(`/api/remediate/contain?hostname=${encodeURIComponent(hostname)}`, { method: 'POST' })
+                    .then(r => r.json())
+                    .then(data => {
+                        alert(data.message);
+                        pollData();
+                    })
+                    .catch(err => {
+                        console.error("Remediation failed:", err);
+                        alert("Remediation command failed to execute.");
+                    });
+            }
+        }
+
+        // --- TIMELINE LOADING ---
+        function loadTimeline() {
+            fetch('/api/timeline')
+                .then(r => r.json())
+                .then(data => {
+                    const container = document.getElementById('timeline-container');
+                    if (data.events.length === 0) { 
+                        container.innerHTML = `<p class="text-gray-500 italic">No incidents recorded in the timeline yet.</p>`; 
+                        return; 
+                    }
+                    container.innerHTML = data.events.map(e => {
+                        const dateObj = new Date(e.time);
+                        const timeStr = isNaN(dateObj) ? e.time : dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' | ' + dateObj.toLocaleDateString();
+                        
+                        return `<div class="timeline-item relative">
+                            <div class="text-sm font-mono text-sky-400 mb-2">${timeStr}</div>
+                            <div class="bg-[#0f1423] border border-gray-800 rounded-xl p-5 shadow-lg max-w-3xl hover:border-gray-600 transition-colors">
+                                <div class="flex justify-between items-center mb-3 border-b border-gray-800 pb-3">
+                                    <span class="text-lg font-bold text-gray-100">${e.title}</span>
+                                    <span class="text-xs bg-rose-500/20 text-rose-400 px-3 py-1 rounded-full font-bold uppercase tracking-wider border border-rose-500/30">${e.severity}</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 text-sm">
+                                    <div><span class="text-gray-500 block text-xs uppercase mb-1">Target Host</span> <span class="font-mono text-amber-500 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">${e.host}</span></div>
+                                    <div><span class="text-gray-500 block text-xs uppercase mb-1">Offending Artifact</span> <span class="font-mono text-gray-300 bg-gray-800 px-2 py-1 rounded border border-gray-700">${e.target}</span></div>
+                                </div>
+                            </div>
+                        </div>`
+                    }).join('');
+                });
+        }
+
+        // --- REPLAY LOGIC ---
+        function replayInvestigation(inv_id = "INV-2026-00001") {
+            const btn = document.getElementById('btn-replay');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<span class="animate-pulse">Recompiling Engine...</span>`;
+            
+            fetch(`/api/investigation/replay/${inv_id}`, { method: 'POST' })
+                .then(r => r.json())
+                .then(data => {
+                    if(data.status === 'success') {
+                        document.getElementById('replay-modal').classList.remove('hidden');
+                        document.getElementById('replay-archived-count').innerText = data.archived_evidence.toLocaleString();
+                        document.getElementById('replay-old-findings').innerText = data.old_findings;
+                        document.getElementById('replay-new-findings').innerText = data.new_findings;
+                        document.getElementById('replay-new-risk').innerText = data.new_risk_score;
+                    } else { 
+                        alert("Replay failed: " + data.message); 
+                        btn.innerHTML = originalText; 
+                    }
+                })
+                .catch(err => { 
+                    console.error(err); 
+                    btn.innerHTML = originalText; 
+                });
+        }
+
+        // --- PDF EXPORT ---
+        function generatePDF() {
+            const element = document.getElementById('report-content');
+            const btn = document.getElementById('pdf-btn');
+            
+            // Temporary styling adjust for PDF engine
+            btn.style.display = 'none'; 
+            element.classList.remove('overflow-y-auto', 'h-full'); 
+            element.style.height = 'max-content';
+            
+            html2pdf().set({ 
+                margin: [0.5, 0.5, 0.5, 0.5], 
+                filename: 'JOCKY_Investigation_Report.pdf', 
+                image: { type: 'jpeg', quality: 1 }, 
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#0d111c' }, 
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } 
+            }).from(element).save().then(() => { 
+                // Restore styling
+                btn.style.display = 'flex'; 
+                element.classList.add('overflow-y-auto', 'h-full'); 
+                element.style.height = '100%'; 
+            });
+        }
+
+        // --- INITIALIZATION ---
+        // Poll immediately on load, then every 3 seconds
+        pollData();
+        setInterval(pollData, 3000);
+    </script>
+</body>
+</html>

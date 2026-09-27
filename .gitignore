@@ -1,0 +1,6 @@
+jocky_agent/target/*
+lang_compiler/build/*
+lang_compiler/dist/*
+builds
+*.zip
+new_structure.md

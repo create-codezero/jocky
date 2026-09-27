@@ -1,0 +1,17 @@
+host "ALL_ENDPOINTS" {
+    collect processes
+    collect network_connections
+    collect startup_items
+    collect services
+    collect system_information
+}
+
+detect {
+    if process.name == "mimikatz.exe" alert "Credential Dumping Tool Detected (Mimikatz)" severity CRITICAL risk_score 85
+    if network.local_port == 4444 alert "Suspicious Default Metasploit Listener (Port 4444)" severity CRITICAL risk_score 75
+    if process.name == "nc.exe" alert "Netcat Reverse Shell Utility Observed" severity HIGH risk_score 60
+    if network.local_port == 4433 alert "Suspicious Encrypted C2 Tunnel Port (4433)" severity HIGH risk_score 50
+    if process.name == "powershell.exe" alert "PowerShell Execution (Verify if Authorized)" severity MEDIUM risk_score 20
+    if network.local_port == 3389 alert "RDP Port Open / Exposed" severity LOW risk_score 10
+    if startup_items.path == "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" alert "Persistence Registry Run Key Populated" severity HIGH risk_score 70
+}

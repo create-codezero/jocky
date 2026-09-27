@@ -1,0 +1,49 @@
+{
+  "version": "1.0-ir",
+  "endpoint_tasks": [
+    {
+      "target_host": "*",
+      "action": "COLLECT",
+      "artifact": "processes",
+      "mode": "READ_ONLY"
+    },
+    {
+      "target_host": "*",
+      "action": "COLLECT",
+      "artifact": "network_connections",
+      "mode": "READ_ONLY"
+    },
+    {
+      "target_host": "*",
+      "action": "COLLECT",
+      "artifact": "startup_items",
+      "mode": "READ_ONLY"
+    }
+  ],
+  "correlation_rules": [
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "cmd.exe",
+      "alert": "Command Interpreter Shell Spawned",
+      "severity": "HIGH",
+      "score_impact": 35
+    },
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "powershell.exe",
+      "alert": "PowerShell Execution Observed",
+      "severity": "HIGH",
+      "score_impact": 40
+    },
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "mimikatz.exe",
+      "alert": "Credential Dumping Tool Detected",
+      "severity": "CRITICAL",
+      "score_impact": 50
+    }
+  ]
+}

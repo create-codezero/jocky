@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.1",
+  "compiler": {
+    "name": "JOCKY LLVM Frontend",
+    "version": "2.1.0"
+  },
+  "source": {
+    "file": "F:\\Projects\\jockey\\lang_compiler\\scripts\\advanced_hunt.jky",
+    "sha256": "5aa700ff17ab4f6287e413ae74843c870605fe022cf59a788753a0ce32fb6101"
+  },
+  "llvm": {
+    "file": "F:\\Projects\\jockey\\lang_compiler\\output.ll",
+    "sha256": "5ac5fe21956d5671d9df60a9b48c15e28d7b59bf39739f78033f94811efac7ea"
+  },
+  "target": {
+    "platform": "windows",
+    "architecture": "x86_64"
+  },
+  "build": {
+    "seed": "91faa3e0513586f2",
+    "polymorphic_execution_variation": true
+  },
+  "statistics": {
+    "hosts": 1,
+    "base_tasks": 5,
+    "final_tasks": 8,
+    "correlation_rules": 7
+  },
+  "runtime_contract": {
+    "init": "jocky_sys_init",
+    "transmit": "jocky_sys_transmit",
+    "operation_prefix": "jocky_op_"
+  },
+  "security_policy": {
+    "read_only_forensics": true,
+    "arbitrary_command_execution": false,
+    "process_injection": false,
+    "security_product_tampering": false,
+    "privilege_escalation": false,
+    "persistence": false,
+    "covert_network_routing": false
+  }
+}

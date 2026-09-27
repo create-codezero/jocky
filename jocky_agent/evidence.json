@@ -1,0 +1,2882 @@
+{
+  "timestamp": "2026-09-06T13:49:35.450107700+00:00",
+  "hostname": "AMIT",
+  "artifacts": [
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5480,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6160,
+        "name": "GlideXRemoteService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12340,
+        "name": "RuntimeBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4512,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22104,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2124,
+        "name": "dwm.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13648,
+        "name": "AsusSoftwareManagerAgent.exe",
+        "exe_path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\asussci2.inf_amd64_ec0a7aca8834d5bc\\ASUSSoftwareManager\\AsusSoftwareManagerAgent.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 280,
+        "name": "Registry",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1752,
+        "name": "WUDFHost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4332,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5528,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15612,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13656,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26384,
+        "name": "adb.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6644,
+        "name": "pgbouncer.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22064,
+        "name": "PhoneExperienceHost.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26071.164.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6720,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 14116,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2404,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15836,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8344,
+        "name": "DAX3API.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5744,
+        "name": "NgcIso.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25440,
+        "name": "YourPhoneAppProxyHost.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26071.164.0_x64__8wekyb3d8bbwe\\YourPhoneAppProxyHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19696,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6272,
+        "name": "GlideXService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2800,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5876,
+        "name": "ArmouryCrateControlInterface.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18192,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10516,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11196,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27812,
+        "name": "conhost.exe",
+        "exe_path": "C:\\Windows\\System32\\conhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19468,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2196,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24648,
+        "name": "RuntimeBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15292,
+        "name": "ArmouryCrate.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\B9ECED6F.ArmouryCrate_6.5.14.0_x64__qmba6cd70vzyy\\ArmouryCrate.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12992,
+        "name": "AppActions.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\AppActions.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10280,
+        "name": "crashpad_handler.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10712,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9520,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23180,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9488,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1308,
+        "name": "WUDFHost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6016,
+        "name": "emBridge.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3628,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4592,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11308,
+        "name": "ArmouryCrate.UserSessionHelper.exe",
+        "exe_path": "C:\\Program Files\\ASUS\\ARMOURY CRATE Service\\ArmouryCrate.UserSessionHelper.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5632,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8840,
+        "name": "AggregatorHost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5036,
+        "name": "ArmouryHtmlDebugServer.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmouryHtmlDebugServer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24528,
+        "name": "ShellExperienceHost.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4528,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3864,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5864,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12456,
+        "name": "WidgetBoard.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.21100.40.0_x64__cw5n1h2txyewy\\WidgetBoard.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9476,
+        "name": "WmiPrvSE.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20688,
+        "name": "BraveCrashHandler64.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15464,
+        "name": "RuntimeBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 29768,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6040,
+        "name": "OfficeClickToRun.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2668,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3488,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2392,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3088,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6124,
+        "name": "GameInputRedistService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 33116,
+        "name": "cargo.exe",
+        "exe_path": "C:\\Users\\amitk\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\cargo.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15384,
+        "name": "CrossDeviceService.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26071.84.0_x64__cw5n1h2txyewy\\CrossDeviceService.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26212,
+        "name": "emBridge.exe",
+        "exe_path": "C:\\Program Files (x86)\\eMudhra\\emBridge\\emBridge.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2356,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6368,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 14488,
+        "name": "CrossDeviceResume.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23076,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1964,
+        "name": "fontdrvhost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1648,
+        "name": "csrss.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3764,
+        "name": "NVDisplay.Container.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12544,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5884,
+        "name": "ArmouryCrate.Service.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24120,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27296,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23504,
+        "name": "OneDrive.exe",
+        "exe_path": "C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20928,
+        "name": "TextInputHost.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3924,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22008,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24156,
+        "name": "WidgetService.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.19.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27868,
+        "name": "OpenConsole.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11911.0_x64__8wekyb3d8bbwe\\OpenConsole.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4728,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12624,
+        "name": "sihost.exe",
+        "exe_path": "C:\\Windows\\System32\\sihost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9924,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 21116,
+        "name": "ArmouryCrate.DenoiseAI.exe",
+        "exe_path": "C:\\Program Files\\ASUS\\ARMOURY CRATE Service\\DenoiseAIPlugin\\ArmouryCrate.DenoiseAI.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 33196,
+        "name": "jocky_agent.exe",
+        "exe_path": "D:\\Projects\\jockey\\jocky_agent\\target\\debug\\jocky_agent.exe",
+        "cpu_usage": 466.66666
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 29872,
+        "name": "pet.exe",
+        "exe_path": "C:\\Users\\amitk\\.vscode\\extensions\\ms-python.vscode-python-envs-1.36.0-win32-x64\\python-env-tools\\bin\\pet.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1972,
+        "name": "fontdrvhost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10880,
+        "name": "nvcontainer.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NvContainer\\nvcontainer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1420,
+        "name": "csrss.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2416,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9688,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 29748,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6540,
+        "name": "TNSLSNR.EXE",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6920,
+        "name": "wslservice.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13672,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7276,
+        "name": "RuntimeBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1808,
+        "name": "lsass.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27932,
+        "name": "WindowsTerminal.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.11911.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1944,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6604,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17272,
+        "name": "ShellHost.exe",
+        "exe_path": "C:\\Windows\\System32\\ShellHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2996,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13208,
+        "name": "wlanext.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 21720,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13412,
+        "name": "AsHotplugCtrl.exe",
+        "exe_path": "C:\\Program Files\\ASUS\\ASUS Hotplug Controller\\AsHotplugCtrl.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13548,
+        "name": "AcPowerNotification.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 908,
+        "name": "smss.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11132,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23812,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4108,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5960,
+        "name": "DAX3API.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6256,
+        "name": "GlideXServiceExt.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 21212,
+        "name": "RtkAudUService64.exe",
+        "exe_path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_179f26ff7cd32d0f\\RtkAudUService64.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22844,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6360,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 29880,
+        "name": "conhost.exe",
+        "exe_path": "C:\\Windows\\System32\\conhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7868,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5092,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27804,
+        "name": "cmd.exe",
+        "exe_path": "C:\\Windows\\System32\\cmd.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25820,
+        "name": "ONENOTEM.EXE",
+        "exe_path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\ONENOTEM.EXE",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6416,
+        "name": "UserOOBEBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 29520,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2756,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22796,
+        "name": "cmd.exe",
+        "exe_path": "C:\\Windows\\System32\\cmd.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 28632,
+        "name": "powershell.exe",
+        "exe_path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4468,
+        "name": "AsusOptimization.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6448,
+        "name": "servicehost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7124,
+        "name": "pgagent.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5924,
+        "name": "AsusSystemAnalysis.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4628,
+        "name": "Memory Compression",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26012,
+        "name": "OpenConsole.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\a44adf7f53\\resources\\app\\node_modules.asar.unpacked\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5916,
+        "name": "AsusSoftwareManager.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17068,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18904,
+        "name": "ctfmon.exe",
+        "exe_path": "C:\\Windows\\System32\\ctfmon.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6000,
+        "name": "ELANFPService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 236,
+        "name": "Secure System",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17888,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 33968,
+        "name": "vctip.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\vctip.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 0,
+        "name": "Idle",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2828,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10152,
+        "name": "NisSrv.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2460,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13824,
+        "name": "AMDRSSrcExt.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.22.20073.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSSrcExt.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22808,
+        "name": "asus_framework.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 30700,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23984,
+        "name": "RtkAudUService64.exe",
+        "exe_path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_179f26ff7cd32d0f\\RtkAudUService64.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24716,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13780,
+        "name": "explorer.exe",
+        "exe_path": "C:\\Windows\\explorer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5980,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11796,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6976,
+        "name": "GameInputRedistService.exe",
+        "exe_path": "C:\\Program Files\\Microsoft GameInput\\x64\\GameInputRedistService.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17852,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26308,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5400,
+        "name": "GlideXNearService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 30048,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1636,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3492,
+        "name": "NVDisplay.Container.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 28584,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23388,
+        "name": "SecurityHealthService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4504,
+        "name": "atieclxx.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6840,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6700,
+        "name": "pg_ctl.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11780,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 21368,
+        "name": "BraveCrashHandler.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 372,
+        "name": "asus_framework.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6456,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6880,
+        "name": "RtkAudUService64.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24364,
+        "name": "cncmd.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.22.20073.0_x64__0a9344xs7nr4m\\radeonsoftware\\cncmd.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6080,
+        "name": "SPSocketServer.exe",
+        "exe_path": "C:\\Windows\\SysWOW64\\Watchdata\\PROXKey CSP India V3.0\\SPSocketServer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5972,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17664,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3400,
+        "name": "WUDFHost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1732,
+        "name": "winlogon.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4828,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15964,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16704,
+        "name": "NVIDIA Overlay.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6308,
+        "name": "GooglePlayGamesServices.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15932,
+        "name": "SearchHost.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22852,
+        "name": "browserhost.exe",
+        "exe_path": "C:\\Program Files\\McAfee\\WebAdvisor\\browserhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18880,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26280,
+        "name": "CCXProcess.exe",
+        "exe_path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud Experience\\CCXProcess.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6440,
+        "name": "LightingService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10688,
+        "name": "nvcontainer.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24256,
+        "name": "RadeonSoftware.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.22.20073.0_x64__0a9344xs7nr4m\\radeonsoftware\\RadeonSoftware.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9572,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7632,
+        "name": "nvcontainer.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NvContainer\\nvcontainer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 14924,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3516,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10184,
+        "name": "uihost.exe",
+        "exe_path": "C:\\Program Files\\McAfee\\WebAdvisor\\uihost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13436,
+        "name": "taskhostw.exe",
+        "exe_path": "C:\\Windows\\System32\\taskhostw.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19060,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12792,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25296,
+        "name": "RuntimeBroker.exe",
+        "exe_path": "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20296,
+        "name": "smartscreen.exe",
+        "exe_path": "C:\\Windows\\System32\\smartscreen.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4620,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2472,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6140,
+        "name": "GameSDK.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10360,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5464,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25736,
+        "name": "AsusOSD.exe",
+        "exe_path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\asussci2.inf_amd64_ec0a7aca8834d5bc\\ASUSOptimization\\AsusOSD.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1248,
+        "name": "AdobeIPCBroker.exe",
+        "exe_path": "C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe Desktop Common\\IPCBox\\AdobeIPCBroker.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 14528,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17612,
+        "name": "NVIDIA Overlay.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6548,
+        "name": "oracle.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18536,
+        "name": "GameInputSvc.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1640,
+        "name": "wininit.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9628,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18356,
+        "name": "SearchIndexer.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24732,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4,
+        "name": "System",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2608,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13484,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2216,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3804,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1340,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12392,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23928,
+        "name": "SecurityHealthSystray.exe",
+        "exe_path": "C:\\Windows\\System32\\SecurityHealthSystray.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19312,
+        "name": "WhatsApp.Root.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2634.101.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12336,
+        "name": "conhost.exe",
+        "exe_path": "C:\\Windows\\System32\\conhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22024,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8616,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6484,
+        "name": "MpDefenderCoreService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24452,
+        "name": "asus_framework.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5932,
+        "name": "AsusAppService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17944,
+        "name": "GameInputSvc.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3652,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20952,
+        "name": "ArmourySocketServer.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 12884,
+        "name": "SP_CertMND.exe",
+        "exe_path": "C:\\Windows\\SysWOW64\\Watchdata\\PROXKey CSP India V3.0\\SP_CertMND.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1780,
+        "name": "services.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 1788,
+        "name": "LsaIso.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6848,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18976,
+        "name": "TabTip.exe",
+        "exe_path": "C:\\Program Files\\Common Files\\microsoft shared\\ink\\TabTip.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3108,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9400,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25556,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5796,
+        "name": "AacAmbientLighting.exe",
+        "exe_path": "C:\\Program Files\\ASUS\\AacAmbientHal\\AacAmbientLighting.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16504,
+        "name": "unsecapp.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25516,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16900,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3524,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6800,
+        "name": "SPMonitor.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3604,
+        "name": "AsusCertService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 24936,
+        "name": "MicrosoftStartFeedProvider.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\Microsoft.StartExperiencesApp_1.380.2.0_x64__8wekyb3d8bbwe\\MicrosoftStartFeedProvider\\MicrosoftStartFeedProvider.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19276,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16952,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22804,
+        "name": "conhost.exe",
+        "exe_path": "C:\\Windows\\System32\\conhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26504,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19072,
+        "name": "ApplicationFrameHost.exe",
+        "exe_path": "C:\\Windows\\System32\\ApplicationFrameHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26296,
+        "name": "node.exe",
+        "exe_path": "C:\\Program Files\\Adobe\\Adobe Creative Cloud Experience\\libs\\node.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5220,
+        "name": "spoolsv.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6380,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5652,
+        "name": "AsusOptimizationStartupTask.exe",
+        "exe_path": "C:\\Windows\\System32\\DriverStore\\FileRepository\\asussci2.inf_amd64_ec0a7aca8834d5bc\\ASUSOptimization\\AsusOptimizationStartupTask.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19584,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27876,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11220,
+        "name": "gamingservices.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3620,
+        "name": "atiesrxx.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4996,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4612,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5948,
+        "name": "AsusSystemDiagnosis.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19188,
+        "name": "NVIDIA Overlay.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2780,
+        "name": "svchost.exe",
+        "exe_path": "C:\\Windows\\System32\\svchost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6052,
+        "name": "FMService64.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23116,
+        "name": "asus_framework.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11788,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 26304,
+        "name": "conhost.exe",
+        "exe_path": "C:\\Windows\\System32\\conhost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2764,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8164,
+        "name": "conhost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16652,
+        "name": "nvsphelper64.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\ShadowPlay\\nvsphelper64.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2724,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 28392,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5896,
+        "name": "AuraWallpaperService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 27568,
+        "name": "SystemSettings.exe",
+        "exe_path": "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 18824,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 23136,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2680,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6868,
+        "name": "MsMpEng.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 13396,
+        "name": "ASUSSmartDisplayControl.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ASUS Smart Display Control\\ASUSSmartDisplayControl.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 21744,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20344,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7712,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4084,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6524,
+        "name": "nvcontainer.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11668,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 11628,
+        "name": "gamingservicesnet.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3612,
+        "name": "amdfendrsr.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 25800,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 15940,
+        "name": "StartMenuExperienceHost.exe",
+        "exe_path": "C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2732,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16192,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 17568,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 9504,
+        "name": "WmiPrvSE.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 20620,
+        "name": "chrome.exe",
+        "exe_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10640,
+        "name": "ArmourySwAgent.exe",
+        "exe_path": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\SwAgent\\ArmourySwAgent.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3124,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19480,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7552,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8776,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 4520,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5904,
+        "name": "AsusSwitch.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 16204,
+        "name": "NVIDIA Overlay.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 28848,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 33960,
+        "name": "cargo.exe",
+        "exe_path": "C:\\Users\\amitk\\.cargo\\bin\\cargo.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 2644,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 6856,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 19796,
+        "name": "msedgewebview2.exe",
+        "exe_path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\152.0.4191.62\\msedgewebview2.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 5392,
+        "name": "svchost.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 22724,
+        "name": "AMDRSServ.exe",
+        "exe_path": "C:\\Program Files\\WindowsApps\\AdvancedMicroDevicesInc-2.AMDRadeonSoftware_10.22.20073.0_x64__0a9344xs7nr4m\\radeonsoftware\\AMDRSServ.exe",
+        "cpu_usage": 28.57143
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 30012,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 14176,
+        "name": "NVIDIA Overlay.exe",
+        "exe_path": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 7200,
+        "name": "ROGLiveService.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 8272,
+        "name": "postgres.exe",
+        "exe_path": "",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 10588,
+        "name": "rundll32.exe",
+        "exe_path": "C:\\Windows\\System32\\rundll32.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 28840,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "Process",
+      "data": {
+        "pid": 3024,
+        "name": "Code.exe",
+        "exe_path": "C:\\Users\\amitk\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+        "cpu_usage": 0.0
+      }
+    },
+    {
+      "type": "NetworkConnection",
+      "data": {
+        "status": "Listening",
+        "info": "Socket telemetry module pending"
+      }
+    },
+    {
+      "type": "StartupItem",
+      "data": {
+        "name": "Mock Registry Key",
+        "path": "HKLM\\Software\\Run"
+      }
+    }
+  ]
+}

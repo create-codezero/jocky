@@ -1,0 +1,101 @@
+{
+  "build_id": "jky-cmp-20260927-080735-150b41ae",
+  "platform": "windows",
+  "mode": "release",
+  "tasks": [
+    {
+      "op": "SIMULATE_MEMORY_ALLOC_FREE",
+      "target": "internal_simulation"
+    },
+    {
+      "op": "system_information",
+      "target": "*"
+    },
+    {
+      "op": "SIMULATE_ENV_QUERY",
+      "target": "internal_simulation"
+    },
+    {
+      "op": "startup_items",
+      "target": "*"
+    },
+    {
+      "op": "services",
+      "target": "*"
+    },
+    {
+      "op": "SIMULATE_MEMORY_ALLOC_FREE",
+      "target": "internal_simulation"
+    },
+    {
+      "op": "SIMULATE_MATH_ENTROPY",
+      "target": "internal_simulation"
+    },
+    {
+      "op": "users",
+      "target": "*"
+    },
+    {
+      "op": "processes",
+      "target": "*"
+    },
+    {
+      "op": "network_connections",
+      "target": "*"
+    },
+    {
+      "op": "SIMULATE_ENV_QUERY",
+      "target": "internal_simulation"
+    }
+  ],
+  "correlation_rules": [
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "mimikatz.exe",
+      "alert": "Credential Dumping Tool Detected (Mimikatz)",
+      "severity": "CRITICAL",
+      "score_impact": 85
+    },
+    {
+      "field": "network.local_port",
+      "operator": "==",
+      "value": "4444",
+      "alert": "Suspicious Default Metasploit Listener (Port 4444)",
+      "severity": "CRITICAL",
+      "score_impact": 75
+    },
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "nc.exe",
+      "alert": "Netcat Reverse Shell Utility Observed",
+      "severity": "HIGH",
+      "score_impact": 60
+    },
+    {
+      "field": "network.local_port",
+      "operator": "==",
+      "value": "4433",
+      "alert": "Suspicious Encrypted C2 Tunnel Port (4433)",
+      "severity": "HIGH",
+      "score_impact": 50
+    },
+    {
+      "field": "process.name",
+      "operator": "==",
+      "value": "powershell.exe",
+      "alert": "PowerShell Execution (Verify if Authorized)",
+      "severity": "MEDIUM",
+      "score_impact": 20
+    },
+    {
+      "field": "network.local_port",
+      "operator": "==",
+      "value": "3389",
+      "alert": "RDP Port Open / Exposed",
+      "severity": "LOW",
+      "score_impact": 10
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+host "*" {
+    collect processes
+    collect network_connections
+    collect startup_items
+}
+
+detect {
+    if process.name == "cmd.exe"
+        alert "Command Interpreter Shell Spawned"
+        severity HIGH
+        risk_score 35
+
+    if process.name == "powershell.exe"
+        alert "PowerShell Execution Observed"
+        severity HIGH
+        risk_score 40
+
+    if process.name == "mimikatz.exe"
+        alert "Credential Dumping Tool Detected"
+        severity CRITICAL
+        risk_score 50
+    
+    if network.local_port == "4444"
+        alert "Suspicious Metasploit Default Port"
+        severity HIGH
+        risk_score 60
+}

@@ -1,0 +1,58 @@
+// JOCKY Version 1.0 - Primary Threat Hunting Profile
+// Target: All Connected Hosts ("*")
+// Objective: General Telemetry Baseline & Advanced Persistent Threat (APT) Detection
+
+host "*" {
+    // 1. Gather baseline identity 
+    collect system_information
+    
+    // 2. Identify persistence mechanisms
+    collect startup_items
+    collect services
+    collect users
+    
+    // 3. Monitor active execution and network states
+    collect processes
+    collect network_connections
+}
+
+detect {
+    // ==========================================
+    // CRITICAL THREATS
+    // ==========================================
+    if process.name == "mimikatz.exe"
+        alert "Credential Dumping Tool Detected (Mimikatz)"
+        severity CRITICAL
+        risk_score 85
+
+    if network.local_port == "4444"
+        alert "Suspicious Default Metasploit Listener (Port 4444)"
+        severity CRITICAL
+        risk_score 75
+
+    // ==========================================
+    // HIGH RISK BEHAVIORS
+    // ==========================================
+    if process.name == "nc.exe"
+        alert "Netcat Reverse Shell Utility Observed"
+        severity HIGH
+        risk_score 60
+
+    if network.local_port == "4433"
+        alert "Suspicious Encrypted C2 Tunnel Port (4433)"
+        severity HIGH
+        risk_score 50
+
+    // ==========================================
+    // MEDIUM / ANOMALY MONITORING
+    // ==========================================
+    if process.name == "powershell.exe"
+        alert "PowerShell Execution (Verify if Authorized)"
+        severity MEDIUM
+        risk_score 20
+
+    if network.local_port == "3389"
+        alert "RDP Port Open / Exposed"
+        severity LOW
+        risk_score 10
+}
