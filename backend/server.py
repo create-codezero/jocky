@@ -95,7 +95,6 @@ def parse_rules_from_ll(ll_path: Path) -> List[Dict[str, Any]]:
         
         escaped_str = match.group(1)
         
-        # Unescape LLVM hex byte representations (e.g. \22 -> ")
         def unescape_llvm(m):
             return chr(int(m.group(1), 16))
         
@@ -150,7 +149,6 @@ def run_detection_rules(cursor, host_id: int, inv_id: str, timestamp: str):
 
     total_risk = 0
 
-    # Reset state before recalculating
     cursor.execute("DELETE FROM alerts WHERE host_id = ? AND investigation_id = ?", (host_id, inv_id))
     cursor.execute("UPDATE processes SET is_suspicious = 0 WHERE host_id = ? AND investigation_id = ?", (host_id, inv_id))
     cursor.execute("UPDATE network_connections SET is_suspicious = 0 WHERE host_id = ? AND investigation_id = ?", (host_id, inv_id))
@@ -169,7 +167,6 @@ def run_detection_rules(cursor, host_id: int, inv_id: str, timestamp: str):
         alert_name = rule.get("alert", "Alert")
         severity = rule.get("severity", "MEDIUM")
 
-        # Process correlation
         if field == "process.name":
             for proc_id, pid, proc_name in processes:
                 match = False
@@ -182,7 +179,6 @@ def run_detection_rules(cursor, host_id: int, inv_id: str, timestamp: str):
                                    (inv_id, host_id, proc_id, alert_name, severity, score, timestamp))
                     total_risk += score
 
-        # Network correlation
         elif field == "network.local_port":
             for net_id, pid, local_port, remote_ip in network_conns:
                 match = False
@@ -211,7 +207,6 @@ def run_detection_rules(cursor, host_id: int, inv_id: str, timestamp: str):
 # ==========================================
 @app.post("/api/evidence/ingest")
 async def ingest_evidence(report: EvidenceReport):
-    """Primary ingestion tunnel for the JOCKY native agent."""
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     try:
@@ -223,20 +218,21 @@ async def ingest_evidence(report: EvidenceReport):
         cursor.execute("DELETE FROM processes WHERE host_id = ? AND investigation_id = ?", (host_id, inv_id))
         cursor.execute("DELETE FROM network_connections WHERE host_id = ? AND investigation_id = ?", (host_id, inv_id))
 
+        cursor.execute("SELECT current_hash FROM evidence WHERE host_id = ? AND investigation_id = ? ORDER BY id DESC LIMIT 1", (host_id, inv_id))
+        last_record = cursor.fetchone()
+        current_chain_hash = last_record[0] if last_record else "0" * 64
+
         for artifact in report.artifacts:
             payload_str = json.dumps(artifact.data, sort_keys=True)
             
-            cursor.execute("SELECT current_hash FROM evidence WHERE host_id = ? AND investigation_id = ? ORDER BY id DESC LIMIT 1", (host_id, inv_id))
-            last_record = cursor.fetchone()
-            previous_hash = last_record[0] if last_record else "0" * 64
-            
+            previous_hash = current_chain_hash
             chain_string = f"{previous_hash}:{report.timestamp}:{artifact.type}:{payload_str}"
-            current_hash = hashlib.sha256(chain_string.encode('utf-8')).hexdigest()
-            evidence_id = f"EV-{host_id}-{current_hash[:8].upper()}"
+            current_chain_hash = hashlib.sha256(chain_string.encode('utf-8')).hexdigest()
+            evidence_id = f"EV-{host_id}-{current_chain_hash[:8].upper()}"
 
             cursor.execute("""INSERT INTO evidence (investigation_id, evidence_id, host_id, artifact_type, timestamp, metadata, previous_hash, current_hash) 
                               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""", 
-                           (inv_id, evidence_id, host_id, artifact.type, report.timestamp, payload_str, previous_hash, current_hash))
+                           (inv_id, evidence_id, host_id, artifact.type, report.timestamp, payload_str, previous_hash, current_chain_hash))
 
             if artifact.type == "Process":
                 cursor.execute("INSERT INTO processes (investigation_id, evidence_id, host_id, pid, name, exe, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)", 
@@ -257,6 +253,11 @@ async def ingest_evidence(report: EvidenceReport):
 async def get_inv_summary(inv_id: str = "INV-2026-00001"):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
+    
+    # Auto-resolve the latest active investigation
+    cursor.execute("SELECT investigation_id FROM hosts ORDER BY id DESC LIMIT 1")
+    latest = cursor.fetchone()
+    if latest: inv_id = latest[0]
     
     cursor.execute("SELECT status FROM investigations WHERE inv_id = ?", (inv_id,))
     status_row = cursor.fetchone()
@@ -285,6 +286,12 @@ async def get_inv_summary(inv_id: str = "INV-2026-00001"):
 async def get_graph_data(inv_id: str = "INV-2026-00001"):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
+    
+    # Auto-resolve the latest active investigation
+    cursor.execute("SELECT investigation_id FROM hosts ORDER BY id DESC LIMIT 1")
+    latest = cursor.fetchone()
+    if latest: inv_id = latest[0]
+
     nodes, links = [], []
 
     cursor.execute("SELECT id, hostname, risk_score FROM hosts WHERE investigation_id = ?", (inv_id,))
@@ -341,6 +348,12 @@ async def get_graph_data(inv_id: str = "INV-2026-00001"):
 async def get_timeline(inv_id: str = "INV-2026-00001"):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
+    
+    # Auto-resolve the latest active investigation
+    cursor.execute("SELECT investigation_id FROM hosts ORDER BY id DESC LIMIT 1")
+    latest = cursor.fetchone()
+    if latest: inv_id = latest[0]
+        
     cursor.execute("SELECT a.timestamp, 'ALERT', a.alert_title, a.severity, p.name, h.hostname FROM alerts a JOIN hosts h ON a.host_id = h.id LEFT JOIN processes p ON a.process_id = p.id WHERE a.investigation_id = ? ORDER BY a.timestamp ASC", (inv_id,))
     events = [{"time": r[0], "type": r[1], "title": r[2], "severity": r[3], "target": r[4], "host": r[5]} for r in cursor.fetchall()]
     conn.close()
@@ -351,6 +364,11 @@ async def replay_investigation(inv_id: str = "INV-2026-00001"):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     try:
+        # Auto-resolve the latest active investigation
+        cursor.execute("SELECT investigation_id FROM hosts ORDER BY id DESC LIMIT 1")
+        latest = cursor.fetchone()
+        if latest: inv_id = latest[0]
+
         cursor.execute("SELECT COUNT(id) FROM alerts WHERE investigation_id = ?", (inv_id,))
         old_findings = cursor.fetchone()[0]
         

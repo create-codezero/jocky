@@ -27,8 +27,8 @@ Folder Structure :
         ├── jocky.db                 # SQLite database
         └── templates/
             └── index.html           # Web dashboard
-
 ```
+
 ---
 
 ## 🎯 Alignment with Problem Statement
@@ -104,6 +104,9 @@ python server.py
 Parse the high-level `.jky` script into native LLVM IR, embedding the detection rules.
 
 ```bash
+cd jocky_agent
+cargo build --release
+
 cd lang_compiler
 pip install llvmlite
 python jocky_compiler.py scripts/advanced_hunt.jky -o output.ll
@@ -114,7 +117,7 @@ python jocky_compiler.py scripts/advanced_hunt.jky -o output.ll
 Validate the IR, apply CFG entropy, and link the standalone native executable.
 
 ```bash
-python polymorphic_builder.py output.ll --platform windows --link --safe-stub-runtime --output-dir ../builds
+python polymorphic_builder.py output.ll --platform windows --link --runtime ../jocky_agent/target/release/jocky_runtime.lib --runtime-lib=-lws2_32 --runtime-lib=-luserenv --runtime-lib=-lbcrypt --runtime-lib=-ladvapi32 --runtime-lib=-lpdh --runtime-lib=-lpowrprof --runtime-lib=-loleaut32 --runtime-lib=-lole32 --runtime-lib=-lpsapi --runtime-lib=-lntdll --runtime-lib=-lshell32 --runtime-lib=-liphlpapi --runtime-lib=-lnetapi32 --output-dir ../builds
 ```
 
 ### Step 4: Execute the Native Agent
