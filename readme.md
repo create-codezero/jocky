@@ -6,6 +6,8 @@ JOCKY-FX is a cross-platform, LLVM-based forensic investigation framework design
 
 It pairs an evasion-resilient endpoint agent with a Central Command (C2) SOAR platform featuring a tamper-evident cryptographic ledger.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2Q1OFyYfjt4?si=9Brkk3nAkPXDjuZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Folder Structure :
 
 ```text
