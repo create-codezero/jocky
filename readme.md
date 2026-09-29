@@ -8,26 +8,27 @@ It pairs an evasion-resilient endpoint agent with a Central Command (C2) SOAR pl
 
 Folder Structure :
 
-Project\jockey
-├── lang_compiler/                 # Component 1 & 2
-│   ├── jocky_compiler.py        # Updated language parser with CFG entropy
-│   ├── jocky_ci.py              # CI/CD Pipeline
-│   ├── polymorphic_builder.py   # The CI/CD script to morph the Rust agent
-│   └── scripts/
-│       └── hunt_rules.jky       # Your custom JOCKY scripts
-├── jocky_agent/                   # Component 3
-│   ├── Cargo.toml
-│   └── src/
-│       ├── lib.rs               # Upgraded stealth agent
-│       ├── syscalls.rs          # Direct system call wrappers (Windows/Linux)
-│       └── obfuscation.rs       # Runtime string decryption logic
-└── backend/                       # Component 4
-    ├── server.py                # FastAPI backend
-    ├── jocky.db                 # SQLite database
-    └── templates/
-        └── index.html           # Web dashboard
+```text
+    Project\jockey
+    ├── lang_compiler/                 # Component 1 & 2
+    │   ├── jocky_compiler.py        # Updated language parser with CFG entropy
+    │   ├── jocky_ci.py              # CI/CD Pipeline
+    │   ├── polymorphic_builder.py   # The CI/CD script to morph the Rust agent
+    │   └── scripts/
+    │       └── hunt_rules.jky       # Your custom JOCKY scripts
+    ├── jocky_agent/                   # Component 3
+    │   ├── Cargo.toml
+    │   └── src/
+    │       ├── lib.rs               # Upgraded stealth agent
+    │       ├── syscalls.rs          # Direct system call wrappers (Windows/Linux)
+    │       └── obfuscation.rs       # Runtime string decryption logic
+    └── backend/                       # Component 4
+        ├── server.py                # FastAPI backend
+        ├── jocky.db                 # SQLite database
+        └── templates/
+            └── index.html           # Web dashboard
 
-
+```
 ---
 
 ## 🎯 Alignment with Problem Statement
